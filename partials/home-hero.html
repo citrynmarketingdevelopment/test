@@ -1,145 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CloudFlow - Manage Your Projects Smarter</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+  .cf-hero {
+    color: #333;
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      color: #333;
-    }
+  .cf-hero__header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
 
-    header {
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
+  .cf-hero__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0066cc;
+  }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #0066cc;
-    }
+  .cf-hero__nav a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #666;
+  }
 
-    nav a {
-      margin-left: 2rem;
-      text-decoration: none;
-      color: #666;
-      transition: color 0.3s;
-    }
+  .cf-hero__panel {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
 
-    nav a:hover {
-      color: #0066cc;
-    }
+  .cf-hero__panel h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: white;
+  }
 
-    .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 6rem 2rem;
-      text-align: center;
-      min-height: 80vh;
-      display: flex;
+  .cf-hero__subtitle {
+    font-size: 1.25rem;
+    margin: 0 auto 2.5rem;
+    max-width: 600px;
+    opacity: 0.95;
+  }
+
+  .cf-hero__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cf-hero__actions a {
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .cf-btn-primary {
+    background: white;
+    color: #667eea;
+  }
+
+  .cf-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  @media (max-width: 768px) {
+    .cf-hero__header {
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-
-    .subtitle {
-      font-size: 1.25rem;
-      margin-bottom: 2.5rem;
-      opacity: 0.95;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-buttons {
-      display: flex;
       gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
     }
 
-    button {
-      padding: 1rem 2.5rem;
+    .cf-hero__nav a {
+      margin: 0 0.75rem;
+    }
+
+    .cf-hero__panel h1 {
+      font-size: 2rem;
+    }
+
+    .cf-hero__subtitle {
       font-size: 1rem;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s;
     }
+  }
+</style>
 
-    .btn-primary {
-      background: white;
-      color: #667eea;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #667eea;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .subtitle {
-        font-size: 1rem;
-      }
-
-      nav {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo">CloudFlow</div>
-    <nav>
+<section class="cf-hero">
+  <div class="cf-hero__header">
+    <div class="cf-hero__logo">CloudFlow</div>
+    <nav class="cf-hero__nav">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
+  </div>
 
-  <section class="hero">
+  <div class="cf-hero__panel">
     <h1>Manage Your Projects Like a Pro</h1>
-    <p class="subtitle">All-in-one platform to streamline workflows, collaborate seamlessly, and ship faster than ever before.</p>
-    <div class="cta-buttons">
-      <button class="btn-primary">Start Free Trial</button>
-      <button class="btn-secondary">Watch Demo</button>
+    <p class="cf-hero__subtitle">
+      All-in-one platform to streamline workflows, collaborate seamlessly, and ship faster than ever before.
+    </p>
+    <div class="cf-hero__actions">
+      <a class="cf-btn-primary" href="/free-trial/">Start Free Trial</a>
+      <a class="cf-btn-secondary" href="/demo/">Watch Demo</a>
     </div>
-  </section>
-</body>
-</html>
+  </div>
+</section>
